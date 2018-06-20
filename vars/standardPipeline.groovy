@@ -10,7 +10,8 @@ def call(body) {
 
 	    try {
 	        stage ('Clone') {
-	        	checkout scm
+	        	//checkout scm
+			sh "echo 'building ${config.projectName} ...'"
 	        }
 	        stage ('Build') {
 	        	sh "echo 'building ${config.projectName} ...'"
@@ -35,6 +36,4 @@ def call(body) {
 	    }
     }
 }
-
-
 
