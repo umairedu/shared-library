@@ -15,6 +15,7 @@ def call(body) {
 	        }
 	        stage ('Build') {
 	        	sh "echo 'building ${config.projectName} ...'"
+            sh "echo 'my first var ${config.projectName} '"
 	        }
 	        stage ('Tests') {
 		        parallel 'static': {
@@ -36,4 +37,3 @@ def call(body) {
 	    }
     }
 }
-
